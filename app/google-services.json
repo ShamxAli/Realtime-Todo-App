@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "89760504318",
+    "firebase_url": "https://realtime-todo-app-39eb9.firebaseio.com",
+    "project_id": "realtime-todo-app-39eb9",
+    "storage_bucket": "realtime-todo-app-39eb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89760504318:android:aaed71bede3e85503c48af",
+        "android_client_info": {
+          "package_name": "com.startup.realtimetodoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89760504318-8aqqmbk030iou39btosb16g2cmfpjsnn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.realtimetodoapp",
+            "certificate_hash": "94effa1d73c5de2e68c3e728aaca7d2e89f63f46"
+          }
+        },
+        {
+          "client_id": "89760504318-ug55vblgdvqc04evh68ptvo0rc26g4gp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaPK27MJV3K4cM6xg_DaI_JPkvLYRZhrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89760504318-ug55vblgdvqc04evh68ptvo0rc26g4gp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
