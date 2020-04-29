@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.firebase.database.ChildEventListener;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FirebaseDatabase mDatabase;
+    int position;
     DatabaseReference mRef;
     List<Todo> list;
     ChildEventListener childEventListener;
@@ -41,19 +43,30 @@ public class MainActivity extends AppCompatActivity {
         childEventListener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                String key = dataSnapshot.getKey();
                 Todo todo = dataSnapshot.getValue(Todo.class);
+                todo.setUid(key); // setting the key for update and delete
+                Log.d("mytag", "onChildAdded: called");
+                list.add(todo);
+                adapterTodo.notifyItemRemoved(adapterTodo.getPosition());
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Todo todo = dataSnapshot.getValue(Todo.class);
+                todo.setUid(dataSnapshot.getKey());
+                list.remove(todo);
+                Log.d("mytag", "onChildChangedddddddddd: called");
                 list.add(todo);
                 adapterTodo.notifyDataSetChanged();
             }
 
             @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
+                Todo todo = dataSnapshot.getValue(Todo.class);
+                todo.setUid(dataSnapshot.getKey());
+                list.remove(todo);
+                adapterTodo.notifyDataSetChanged();
             }
 
             @Override

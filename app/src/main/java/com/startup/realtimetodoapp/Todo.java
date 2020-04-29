@@ -1,9 +1,12 @@
 package com.startup.realtimetodoapp;
 
+import androidx.annotation.Nullable;
+
 public class Todo {
 
     String name;
     int age;
+    String uid;  // for deleting and updating
 
 
     // Req for db
@@ -29,5 +32,23 @@ public class Todo {
     public Todo(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        if (obj instanceof Todo) {
+            Todo todo = (Todo) obj;
+            return this.uid.equals(todo.getUid());
+        } else {
+            return false;
+        }
     }
 }
