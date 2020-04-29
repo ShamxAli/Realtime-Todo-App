@@ -1,13 +1,13 @@
-package com.startup.realtimetodoapp.model;
+package com.startup.realtimetodoapp;
 
-public class TODO {
+public class Todo {
 
     String name;
     int age;
 
 
     // Req for db
-    public TODO() {
+    public Todo() {
     }
 
     public String getName() {
@@ -26,7 +26,7 @@ public class TODO {
         this.age = age;
     }
 
-    public TODO(String name, int age) {
+    public Todo(String name, int age) {
         this.name = name;
         this.age = age;
     }

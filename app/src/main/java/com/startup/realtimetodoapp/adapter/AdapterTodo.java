@@ -10,17 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.startup.realtimetodoapp.R;
-import com.startup.realtimetodoapp.model.TODO;
+import com.startup.realtimetodoapp.Todo;
 
 import java.util.List;
 
 public class AdapterTodo extends RecyclerView.Adapter<AdapterTodo.MyViewHolder> {
 
     Context context;
-    List<TODO> list;
+    List<Todo> list;
 
 
-    public AdapterTodo(Context context, List<TODO> list) {
+    public AdapterTodo(Context context, List<Todo> list) {
         this.context = context;
         this.list = list;
     }
@@ -35,10 +35,8 @@ public class AdapterTodo extends RecyclerView.Adapter<AdapterTodo.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        TODO todo = list.get(position);
-        holder.textView.setText(todo.getName());
-
-
+        Todo todo = list.get(position);
+        holder.textView.setText(todo.getName() + " | " + todo.getAge());
     }
 
     @Override
@@ -47,12 +45,13 @@ public class AdapterTodo extends RecyclerView.Adapter<AdapterTodo.MyViewHolder> 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        TextView textView, tvAge;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textView = itemView.findViewById(R.id.desgn_tv);
+            tvAge = itemView.findViewById(R.id.tvAge);
         }
     }
 }

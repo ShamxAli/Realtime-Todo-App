@@ -17,7 +17,17 @@
         android:layout_marginTop="30dp"
         android:clickable="true"
         android:focusable="true"
-        android:hint="Write notes here"
+        android:hint="Enter your name"
+
+        />
+
+    <EditText
+        android:id="@+id/et_age"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:hint="Enter your age"
 
         />
 
